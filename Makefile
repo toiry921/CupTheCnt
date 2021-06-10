@@ -6,3 +6,4 @@ ctc: main.c
 
 clean: 
 	rm ctc
+	rm -rf updates

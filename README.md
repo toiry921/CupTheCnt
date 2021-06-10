@@ -1,18 +1,15 @@
-# CupTheCunt
+# CupTheCnt
 **Usage**
 ```
-  ctc <CupList> <Contents>
+  ctc <CupList> <Contents.cnt>
 ```
-CupList is the Cuplist and Contents is Contents.cnt  
-Given these files it will produce a folder called "updates" and extract all CIAs to that folder  
-note that CIAs in there aren't retail ready either and you will need seprate tools for that
-
-This is for use with extracted ROMFS from 
-*Nintendo 3ds Dev CSU updaters
-*Nintendo 3ds SD SNAKE System Updaters
+Given a Matching Cuplist and Contents.cnt will return a folder filled with the update CIA titles. 
+This is for use with extracted ROMFS from Nintendo 3DS CSU or SNAKE SD DevKit Updaters. 
 <sub>And no I won't help you find them</sub>
 
 **Credits**  
+
+Yellows8 - [cuplist tool]("https://github.com/yellows8/cuplist_tool") created a better parser for cuplist files than the one that I originally used.
 
 Ryan - He's a cute kitty and gives me fun toys
 

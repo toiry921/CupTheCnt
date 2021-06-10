@@ -14,5 +14,3 @@ typedef struct
 	uint8_t unknown[0xBFC];
 	Contents_entry entries[CUPLIST_ENTRIES];
 } Contents_header;
-
-int extract_cias(uint64_t *cuplist, int entries, const char *contents_path, const char *dir);
