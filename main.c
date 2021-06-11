@@ -18,12 +18,19 @@ int extract_cias(char *contents_path, unsigned long long *tidlist, unsigned int 
     char out_str[PATH_MAX - 1] = {0};
 
     mkdir(outdir);
-
     contents = fopen(contents_path, "rb");
+
+    if (!contents) return 1;
+
     cont_hdr = (Contents_header*)malloc(sizeof(Contents_header));
-    // TODO: add check to see if Contents.cnt is actually valid
     fseek(contents, 0, SEEK_SET);
     fread(cont_hdr, sizeof(Contents_header), 1, contents);
+
+    if(memcmp(cont_hdr->magic, (uint8_t[]){'C','O','N','T'}, 4)) {
+        printf("Invalid Contents\n");
+        free(cont_hdr);
+        return 1;
+    }
 
     for (int i = 0; i < tidindex; i++) {
         snprintf(out_str, PATH_MAX, "%s/%016"PRIx64".cia", outdir, tidlist[i]);
